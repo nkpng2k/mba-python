@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
-import tepper_stats.tepper_stats.confidence_intervals as ci
+import tepper_stats.confidence_intervals as ci
 
 
 def histogram(
