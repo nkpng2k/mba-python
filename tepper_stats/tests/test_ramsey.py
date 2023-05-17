@@ -1,4 +1,3 @@
-import pandas as pd
 import statsmodels.api as sm
 
 from tepper_stats import ramsey
