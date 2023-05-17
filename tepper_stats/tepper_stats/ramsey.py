@@ -1,4 +1,4 @@
-from statsmodels.stats.diagnostic as smd
+import statsmodels.stats.diagnostic as smd
 
 
 def ramsey_test(fitted_model):
