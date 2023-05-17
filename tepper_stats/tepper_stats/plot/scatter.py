@@ -4,10 +4,33 @@ from typing import Sequence
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
+import statsmodels.api as sm
 
 
-def actual_fitted():
-    pass
+def actual_fitted(fitted_model, data: pd.DataFrame, col_name: str, alpha=0.05):
+    """
+    Plots the fitted values of a model for the provided data.
+
+    :param fitted_model: a model created by `.fit()` method from statsmodel package
+    :param data: pandas DataFrame with independent and dependent variables
+    :param col_name: Name of the dependent variable as a string
+    :param alpha:
+    :return:
+    """
+    target = data[col_name]
+    if fitted_model.k_constant != 0:
+        data = sm.add_constant(data[data.columns.drop(col_name)])
+    else:
+        data = data[data.columns.drop(col_name)]
+    predictions = fitted_model.get_prediction(data)
+    pred_summary = predictions.summary_frame(alpha=alpha)
+
+    plt.plot(pred_summary.index, pred_summary["mean"], label="Predictions", color="red")
+    plt.plot(pred_summary.index, target, label="Actual Values", marker="o", color="black")
+    plt.plot(pred_summary.index, pred_summary["obs_ci_lower"], label="Lower Prediction Interval", color="blue")
+    plt.plot(pred_summary.index, pred_summary["obs_ci_upper"], label="Upper Prediction Interval", color="blue")
+    plt.legend()
+    plt.show()
 
 
 def log_actual_fitted():
