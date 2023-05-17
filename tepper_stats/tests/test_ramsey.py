@@ -4,9 +4,9 @@ import statsmodels.api as sm
 from tepper_stats import ramsey
 
 
-def test_ramsey():
+def test_ramsey(refrigerator_data):
     # Given
-    df = pd.read_excel("./data/Refrigerator_Data.xlsx")
+    df = refrigerator_data
     exog = sm.add_constant(df[["COOLSIZE", "OPCOST", "SHELVES", "FREZSIZE"]])
     reg = sm.OLS(df["PRICE"], exog)
     reg_result = reg.fit()
