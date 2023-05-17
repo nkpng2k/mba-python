@@ -18,5 +18,5 @@ def test_ramsey(refrigerator_data):
     ramsey_result = ramsey.ramsey_test(reg_np)
 
     # Then
-    assert ramsey_result[0] is not None
-    assert ramsey_result[1] is not None
+    assert ramsey_result[0].pvalue == 4.5241990720571154e-07
+    assert ramsey_result[1].pvalue == 3.295179553275511e-06
