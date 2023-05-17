@@ -1,9 +1,9 @@
-from statsmodels.stats.diagnostic import linear_reset
+from statsmodels.stats.diagnostic as smd
 
 
 def ramsey_test(fitted_model):
-    one_fitted = linear_reset(fitted_model, power=2, test_type="fitted", use_f=True)
-    two_fitted = linear_reset(fitted_model, power=[2, 3], test_type="fitted", use_f=True)
+    one_fitted = smd.linear_reset(fitted_model, power=2, test_type="fitted", use_f=True)
+    two_fitted = smd.linear_reset(fitted_model, power=[2, 3], test_type="fitted", use_f=True)
 
     print("One Fitted:")
     print(one_fitted.summary())
