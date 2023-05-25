@@ -33,3 +33,8 @@ def summary_hac(fitted_model, max_lags=1):
     print(refitted.summary())
 
     return refitted
+
+
+# TODO (@nkpng2k): Implement Arima Summary Function
+def summary_arima(fitted_model):
+    pass
