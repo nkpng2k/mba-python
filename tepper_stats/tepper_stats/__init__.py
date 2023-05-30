@@ -1,3 +1,6 @@
+from .coefficients import \
+    test_h, \
+    test_hac
 from .distribution import \
     select, \
     fit, \
@@ -13,5 +16,7 @@ __all__ = [
     "summary_hac",
     "select",
     "fit",
-    "create"
+    "create",
+    "test_h",
+    "test_hac"
 ]
