@@ -56,7 +56,7 @@ def create(num_samples, best_fit: dict):
     dist = list(best_fit.keys())[0]
     params = best_fit.get(dist)
     dist_func = getattr(sc.stats, dist)
-    return dist_func(size=num_samples, **params)
+    return dist_func.rvs(size=num_samples, **params)
 
 
 def _print_instructions(result):
