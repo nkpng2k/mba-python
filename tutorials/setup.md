@@ -1,5 +1,8 @@
 # Setting Up Python and `tepper_stats`
 
+A short tutorial on how to setup the `tepper_stats` module in your python
+environment.
+
 ## Setting Up Tepper Stats Package
 
 For now, the `tepper_stats` package is not hosted on `pypi`, the official
@@ -7,7 +10,7 @@ python package index, and does not come prebuilt as an installable file.
 Therefore, once a python environment has been created, you can install the 
 `tepper_stats` package via the following steps
 
-```commandline
+```shell
 # To check if python is properly installed
 python --version
 # Output should look like this:
@@ -28,6 +31,42 @@ python -c "import tepper_stats; print(tepper_stats.__name__)"
 NOTE: The `tepper_stats` package uses `poetry` to manage dependencies, making it
 slightly easier to build and install all the necessary packages to run the
 `tepper_stats` package.
+
+## Running Python
+
+There are three main ways to interact with python:
+1. Python Shell
+   * This is the most direct way to work with python, but is less user-friendly.
+   * In order to start a python shell, simply type `python` in your commandline.
+
+```shell
+# Example:
+python
+```
+```shell
+# Which results in something like:
+Python 3.8.13 (default, Jul  6 2022, 21:20:18)
+[Clang 13.1.6 (clang-1316.0.21.2.5)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import tepper_stats
+>>> exit()
+```
+
+2. Python Script
+   * A pre-written file. Basically a list of things you want python to do.
+   * You can find a very simple python script [here](./examples/simple_script.py)
+   
+```shell
+# Example
+# From mba-python directory
+python tutorials/examples/simple_script.py
+```
+
+3. Jupyter Notebooks
+   * Probably the most difficult to setup, but is very user-friendly once installed
+   * Gives you an interactive python UI to use.
+   * Learn more [here](https://jupyter.org/)
+   * You can find a very simple notebook [here](examples/simple_notebook.ipynb)
 
 ## Future
 
